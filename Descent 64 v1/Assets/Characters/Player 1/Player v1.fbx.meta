@@ -78,8 +78,9 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
-  importAnimation: 1
+  referencedClips:
+  - c48c65ca3f4c04b40991f8c855c2c504
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []
@@ -179,17 +180,17 @@ ModelImporter:
       position: {x: -0.0030425787, y: 3.1782818, z: -0.20220579}
       rotation: {x: -0.5635455, y: 0, z: -0, w: 0.82608503}
       scale: {x: 9.66656, y: 65.598885, z: 283.53143}
-    armTwist: 0.5
-    foreArmTwist: 0.5
-    upperLegTwist: 0.5
-    legTwist: 0.5
-    armStretch: 0.05
-    legStretch: 0.05
+    armTwist: 1
+    foreArmTwist: 0
+    upperLegTwist: 1
+    legTwist: 0
+    armStretch: 0
+    legStretch: 0
     feetSpacing: 0
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
