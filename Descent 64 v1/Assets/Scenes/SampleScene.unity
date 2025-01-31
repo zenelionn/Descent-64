@@ -3470,7 +3470,7 @@ GameObject:
   - component: {fileID: 1320729496}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10835,7 +10835,7 @@ Transform:
   m_GameObject: {fileID: 919132148655842884}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7123742, y: -0.16, z: -0.058288813}
+  m_LocalPosition: {x: -12.62, y: -0.16, z: -0.058288813}
   m_LocalScale: {x: 0.87, y: 0.87, z: 0.87}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11511,7 +11511,7 @@ Transform:
   m_GameObject: {fileID: 8707273952518445829}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071069, y: 0.0000000064819496, z: -0.000000011785365, w: 0.7071067}
-  m_LocalPosition: {x: -0.0065927636, y: 1.1187235, z: -0.00000008684547}
+  m_LocalPosition: {x: -4.53, y: 1.12, z: -0}
   m_LocalScale: {x: 0.20116134, y: 0.20116132, z: 0.20116132}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11790,7 +11790,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.33
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
