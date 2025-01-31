@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class patrolState : StateMachineBehaviour
 {
-    float timer;
-    List<Transform> wayPoints = new List<Transform>();
-    NavMeshAgent agent;
+    private float timer;
+    private List<Transform> wayPoints = new List<Transform>();
+    private NavMeshAgent agent;
 
-    Transform player;
-    float chaseRange = 8;
+    private Transform player;
+
+    [SerializeField] private float chaseRange = 8;
+    [SerializeField] private float agentSpeed;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent = animator.GetComponent<NavMeshAgent>();
-        agent.speed = 1.5f;
+        agent.speed = agentSpeed;
         timer = 0;
         GameObject go = GameObject.FindGameObjectWithTag("WayPoints");
         foreach (Transform t in go.transform){

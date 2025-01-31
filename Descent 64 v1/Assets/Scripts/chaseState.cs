@@ -5,15 +5,21 @@ using UnityEngine;
 
 public class chaseState : StateMachineBehaviour
 {
-    NavMeshAgent agent;
-    Transform player;
+    private NavMeshAgent agent;
+    private Transform player;
+    
+
+    [SerializeField] private float agentSpeed;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 3.5f;
+        agent.speed = agentSpeed;
+
+        
+        
 
     }
 
@@ -21,6 +27,14 @@ public class chaseState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent.SetDestination(player.position);
+        float distance = Vector3.Distance(player.position, animator.transform.position);
+        if (distance > 15){
+            animator.SetBool("isChasing", false);
+        }
+        if (distance < 1f){
+            // play jumpscare
+                   
+    }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
