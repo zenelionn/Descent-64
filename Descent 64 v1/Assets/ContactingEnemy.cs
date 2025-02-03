@@ -21,12 +21,12 @@ public class ContactingEnemy : MonoBehaviour
         jumpscare.enabled = false;
     }
 
-    void OnTriggerEnter(Collider other){
+    /*void OnTriggerEnter(Collider other){
         if (other.CompareTag("Enemy")){
             Debug.Log("Hit");
             jumpscare.enabled = true;
             videoPlayer.Play();
             
         }
-    }
+    }*/
 }

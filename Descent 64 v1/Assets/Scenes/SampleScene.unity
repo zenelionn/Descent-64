@@ -3055,11 +3055,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 159221757}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5760493320708922015, guid: 268bbd229edfdba45a4d45903e472716,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1347195526}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 268bbd229edfdba45a4d45903e472716, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -4573,26 +4569,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1834148227}
   m_LocalEulerAnglesHint: {x: 0, y: 40.975, z: 0}
---- !u!1 &1347195522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5760493320708922015, guid: 268bbd229edfdba45a4d45903e472716,
-    type: 3}
-  m_PrefabInstance: {fileID: 774996414}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1347195526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347195522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3e82a61712a417f83903c105a42e99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpscare: {fileID: 1736579045}
-  videoPlayer: {fileID: 655415985}
 --- !u!1 &1367482646
 GameObject:
   m_ObjectHideFlags: 0
