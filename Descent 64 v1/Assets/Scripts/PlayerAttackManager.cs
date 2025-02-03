@@ -9,24 +9,49 @@ public class PlayerAttackManager : MonoBehaviour
 
     if press button
     - play animation
+    - set magic ball location to players
+    - enable magic ball
+    - move magic ball towards enemy
     - set projectile after a few milliseconds to match animations
     */
 
     [SerializeField] private Animator playerAnimation;
+    [SerializeField] private GameObject magicBall;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject enemy;  
+
+    private Vector3 finalDestination;
+    private bool attacking;
+    [SerializeField] private float speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        magicBall.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        finalDestination = enemy.transform.position;
         if (Input.GetKeyDown(KeyCode.B)){
             StartCoroutine(endAttack());
             Debug.Log("Attack");
             playerAnimation.SetBool("Attacking", true);
+            // set location of magicball to player
+            magicBall.transform.position = player.transform.position;
+            
+            magicBall.SetActive(true);
+            attacking = true;
         }
+        if(attacking == true){
+            sendBall();
+            //if ball touch man kill ball
+            if (magicBall.transform.position == finalDestination){
+                magicBall.SetActive(false);
+            }
+        }
+        
     }
 
     IEnumerator endAttack(){
@@ -34,4 +59,11 @@ public class PlayerAttackManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         playerAnimation.SetBool("Attacking", false);
     }
+
+    void sendBall(){
+        magicBall.transform.position = Vector3.MoveTowards(magicBall.transform.position, finalDestination, speed * Time.deltaTime);
+    }
+
+    
+    
 }
