@@ -35,7 +35,7 @@ public class chaseState : StateMachineBehaviour
             animator.SetBool("isChasing", false);
         }
         if (distance < 1f){
-            Debug.Log("Hit");
+            
             jumpscareCheck = true;
                    
     }
