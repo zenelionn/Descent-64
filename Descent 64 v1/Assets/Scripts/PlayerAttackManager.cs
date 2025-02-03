@@ -33,10 +33,10 @@ public class PlayerAttackManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // move this back into the if statement if you want to add some sort of aiming mechanic
         finalDestination = enemy.transform.position;
         if (Input.GetKeyDown(KeyCode.B)){
             StartCoroutine(endAttack());
-            Debug.Log("Attack");
             playerAnimation.SetBool("Attacking", true);
             // set location of magicball to player
             magicBall.transform.position = player.transform.position;
