@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
         canvas.enabled = false;        
     }
 
-    private void OnTriggerEnter(Collider other){
+    void OnTriggerEnter(Collider collision){
         // change text
-        if (other.gameObject.CompareTag("Player")){
+        if (collision.gameObject.CompareTag("Enemy")){
             Debug.Log("hitting");
         }
     }
