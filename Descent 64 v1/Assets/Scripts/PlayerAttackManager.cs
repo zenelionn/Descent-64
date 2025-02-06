@@ -45,6 +45,7 @@ public class PlayerAttackManager : MonoBehaviour
             
             magicBall.SetActive(true);
             attacking = true;
+            
         }
         if(attacking == true){
             sendBall();
@@ -68,7 +69,7 @@ public class PlayerAttackManager : MonoBehaviour
 
     void sendBall(){
         magicBall.transform.position = Vector3.MoveTowards(magicBall.transform.position, finalDestination, speed * Time.deltaTime);
-
+        
     }
 
     
