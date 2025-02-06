@@ -22,12 +22,14 @@ public class PlayerAttackManager : MonoBehaviour
 
     private Vector3 finalDestination;
     private bool attacking;
+    private Vector3 despawn;
     [SerializeField] private float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         magicBall.SetActive(false);
+        despawn = new Vector3(-0.0140000004f,1.38800001f,-1140.69995f);
     }
 
     // Update is called once per frame
@@ -48,8 +50,12 @@ public class PlayerAttackManager : MonoBehaviour
             sendBall();
             //if ball touch man kill ball
             if (magicBall.transform.position == finalDestination){
+                enemyHealth.health = enemyHealth.health - 1;
                 magicBall.SetActive(false);
+                magicBall.transform.position = despawn;
+                
             }
+            
         }
         
     }
@@ -62,6 +68,7 @@ public class PlayerAttackManager : MonoBehaviour
 
     void sendBall(){
         magicBall.transform.position = Vector3.MoveTowards(magicBall.transform.position, finalDestination, speed * Time.deltaTime);
+
     }
 
     
