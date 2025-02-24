@@ -25,15 +25,9 @@ public class Cutscene1Manager : MonoBehaviour
 
     [Header("Cameras")]
     [SerializeField] List<Camera> cameraList = new List<Camera>();
-    private Camera currentCamera;
 
     [Header("Level Loader")]
     [SerializeField] private string levelToLoad;
-
-    [Header("Shots")]
-    private int shotNumber = 0;
-    private int talkingTotal;
-    [SerializeField] private int shotTotal;
 
     void Start(){
         // initialise dialogue queue
@@ -41,11 +35,6 @@ public class Cutscene1Manager : MonoBehaviour
         nextButton.onClick.AddListener(OnNextButtonClicked);
         skipButton.onClick.AddListener(SkipCutscene);
         nextButton.gameObject.SetActive(false);
-
-        SwitchCameras(shotNumber);
-        shotNumber = 1;
-        talkingTotal = shotTotal + 1;
-
     }
 
     public void StartDialogue(Dialogue dialogue){
@@ -83,17 +72,6 @@ public class Cutscene1Manager : MonoBehaviour
 
     private void OnNextButtonClicked(){
         DisplayNextSentence();
-        if (shotNumber != talkingTotal){
-            SwitchCameras(shotNumber);
-            shotNumber = shotNumber + 1;
-            Debug.Log(shotNumber);
-        }
-        else{
-            shotNumber = shotTotal;
-        }
-        
-
-        
         
     }
 
@@ -105,14 +83,6 @@ public class Cutscene1Manager : MonoBehaviour
 
     private void SkipCutscene(){
         EndDialogue();
-    }
-
-    private void SwitchCameras(int shotNumber){
-        foreach (Camera cam in cameraList){
-            cam.gameObject.SetActive(false);
-        }
-
-        cameraList[shotNumber].gameObject.SetActive(true);
     }
 
     IEnumerator LoadLevelASync(string levelToLoad){

@@ -13,19 +13,6 @@ MonoBehaviour:
   m_Name: Cutscene 1
   m_EditorClassIdentifier: 
   sentences:
-  - 'Dad! '
-  - "Don\u2019t lock me down here please!"
-  - " I\u2019m telling you something is wrong with him! "
-  - " Don\u2019t leave me down here with him please!"
-  - " Whatever that thing is\u2026"
-  - " It\u2019s not my brother anymore\u2026 "
-  - '// we see a shot of Enemy 1, in the corner, his face is covered
-
-'
-  - "// the camera moves closer and we see the head turn to reveal Enemy 1\u2019s
-    face\r\n"
-  - ' Dad! Please!'
-  - // She hears nothing in return
-  - "Okay\u2026 I have to avoid whatever that thing is\u2026"
-  - "Surely there\u2019s something here that can help me"
-  - " I just have to be careful\u2026\r\n"
+  - This is a test
+  - To see if i can get the cutscenes to work
+  - Did it work?
