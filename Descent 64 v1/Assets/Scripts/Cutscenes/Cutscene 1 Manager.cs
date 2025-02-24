@@ -25,6 +25,10 @@ public class Cutscene1Manager : MonoBehaviour
     [Header("Cameras")]
     [SerializeField] private List<Camera> cameraList = new List<Camera>();
     private Camera currentCamera;
+
+    [Header("Positions")]
+    [SerializeField] private List<GameObject> positions = new List<GameObject>();
+    [SerializeField] private GameObject Player;
     
     [Header("Level Loader")]
     [SerializeField] private string levelToLoad;
@@ -79,6 +83,8 @@ public class Cutscene1Manager : MonoBehaviour
         DisplayNextSentence();
         if (shotNumber != shotTotal){
             playerAnimator.Play(playerAnimations[shotNumber]);
+            Player.transform.position = positions[shotNumber].transform.position;
+            Player.transform.rotation = positions[shotNumber].transform.rotation;
             enemyAnimator.Play(enemyAnimations[shotNumber]);
             SwitchCameras(shotNumber);
             shotNumber = shotNumber + 1;
