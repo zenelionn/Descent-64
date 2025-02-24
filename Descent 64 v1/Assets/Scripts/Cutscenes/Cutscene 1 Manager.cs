@@ -17,20 +17,25 @@ public class Cutscene1Manager : MonoBehaviour
     private Queue<string> sentences;
 
     [Header("Animations")]
-    [SerializeField] Animator playerAnimator;
-    [SerializeField] List<string> playerAnimations = new List<string>();
-
-    [SerializeField] Animator enemyAnimator;
-    [SerializeField] List<string> enemyAnimations = new List<string>();
+    [SerializeField] private Animator playerAnimator;
+    [SerializeField] private List<string> playerAnimations = new List<string>();
+    [SerializeField] private Animator enemyAnimator;
+    [SerializeField] private List<string> enemyAnimations = new List<string>();
 
     [Header("Cameras")]
-    [SerializeField] List<Camera> cameraList = new List<Camera>();
-
+    [SerializeField] private List<Camera> cameraList = new List<Camera>();
+    private Camera currentCamera;
+    
     [Header("Level Loader")]
     [SerializeField] private string levelToLoad;
 
+    private int talkingTotal;
+    private int shotNumber = 1;
+    [SerializeField] private int shotTotal;
+
     void Start(){
-        // initialise dialogue queue
+        // initialise dialogue queue]
+        talkingTotal = shotTotal +1;
         sentences = new Queue<string>();
         nextButton.onClick.AddListener(OnNextButtonClicked);
         skipButton.onClick.AddListener(SkipCutscene);
@@ -72,6 +77,15 @@ public class Cutscene1Manager : MonoBehaviour
 
     private void OnNextButtonClicked(){
         DisplayNextSentence();
+        if (shotNumber != shotTotal){
+            playerAnimator.Play(playerAnimations[shotNumber]);
+            SwitchCameras(shotNumber);
+            shotNumber = shotNumber + 1;
+            Debug.Log(shotNumber);
+        }
+        else{
+            shotNumber = shotTotal;
+        }
         
     }
 
@@ -85,10 +99,20 @@ public class Cutscene1Manager : MonoBehaviour
         EndDialogue();
     }
 
+    private void SwitchCameras(int shotNumber){
+        foreach (Camera cam in cameraList){
+            cam.gameObject.SetActive(false);
+        }
+
+        cameraList[shotNumber].gameObject.SetActive(true);
+    }
+
     IEnumerator LoadLevelASync(string levelToLoad){
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
         yield return null;
    }
+
+   
    
 }
 
