@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class pickUpGem : MonoBehaviour
 {
     [Header("Canvas Stuff")]
     [SerializeField] private Canvas dialogueCanvas;
+    [SerializeField] private Canvas transformCanvas;
+    [SerializeField] private VideoPlayer videoplayer;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private GameObject EButton;
@@ -17,6 +20,7 @@ public class pickUpGem : MonoBehaviour
     void Start()
     {
         dialogueCanvas.enabled = false;
+        transformCanvas.enabled = false;
         canInteract = false;
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
     }
@@ -40,8 +44,19 @@ public class pickUpGem : MonoBehaviour
                 dialogueCanvas.enabled = true;
 
                 // move to second cutscene
-                
-
+                StartCoroutine(endVideo());
+                transformCanvas.enabled = true;
+                videoplayer.Play();
             }
     }}
+
+    IEnumerator endVideo(){
+        yield return new WaitForSeconds(18);
+        transformCanvas.enabled = false;
+        // change the model
+        modelChanger.Transformed = true;
+        
+    }
+
+    
 }
