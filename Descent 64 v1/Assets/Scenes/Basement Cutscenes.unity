@@ -3514,7 +3514,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 9097766174983056708}
   enemyAnimations: []
   cameraList: []
-  levelToLoad: 
+  levelToLoad: The Basement
 --- !u!1001 &267060518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8666,7 +8666,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -803.8977, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -26295,7 +26295,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1524087017}
-  - component: {fileID: 1524087016}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -26303,20 +26302,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1524087016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524087015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31d72e5e37a41cd4e8875d34f2e0913a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  videoplayer: {fileID: 0}
 --- !u!4 &1524087017
 Transform:
   m_ObjectHideFlags: 0
@@ -29575,6 +29560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1835810914}
+  - component: {fileID: 1835810915}
   m_Layer: 0
   m_Name: Dialogue Starter
   m_TagString: Untagged
@@ -29597,6 +29583,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 55525556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835810915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835810913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d09047825faa94a896f06d7cf12985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 263135648}
+  dialogue: {fileID: 11400000, guid: 305a9895f3e16604ab8853ae8534d7db, type: 2}
+  startButton: {fileID: 670883081}
 --- !u!1 &1838755992
 GameObject:
   m_ObjectHideFlags: 0
