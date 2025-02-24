@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cutscene 1
   m_EditorClassIdentifier: 
   sentences:
-  - This is a test
-  - To see if i can get the cutscenes to work
-  - Did it work?
+  - Dad!
+  - "Don\u2019t lock me down here please!"
+  - " I\u2019m telling you something is wrong with him! "

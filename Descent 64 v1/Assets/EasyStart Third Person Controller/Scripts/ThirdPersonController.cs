@@ -42,12 +42,14 @@ public class ThirdPersonController : MonoBehaviour
     bool inputCrouch;
     bool inputSprint;
 
+
     Animator animator;
     CharacterController cc;
 
 
     void Start()
     {
+
         cc = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
 
