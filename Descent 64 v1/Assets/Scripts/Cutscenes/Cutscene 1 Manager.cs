@@ -79,6 +79,7 @@ public class Cutscene1Manager : MonoBehaviour
         DisplayNextSentence();
         if (shotNumber != shotTotal){
             playerAnimator.Play(playerAnimations[shotNumber]);
+            enemyAnimator.Play(enemyAnimations[shotNumber]);
             SwitchCameras(shotNumber);
             shotNumber = shotNumber + 1;
             Debug.Log(shotNumber);
