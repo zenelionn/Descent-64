@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class DoorManager : MonoBehaviour
 {
     [Header("Door Stuff")]
@@ -18,10 +20,12 @@ public class DoorManager : MonoBehaviour
     [Header("Canvas Stuff")]
     [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private GameObject EButton;
   
     private void Start(){
         canInteract = false;
         dialogueCanvas.enabled = false;
+        EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
 
         //doorAnimator.SetBool("isOpen", false);
     }
@@ -29,6 +33,7 @@ public class DoorManager : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.GetComponent<Collider>() != null){
                 playerCollider = other;
+                EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
                 canInteract = true;
                 doorOpen = false;
             
@@ -40,6 +45,7 @@ public class DoorManager : MonoBehaviour
             canInteract = false;
             CloseDoor();
             dialogueCanvas.enabled = false;
+            EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
             
         }
         
