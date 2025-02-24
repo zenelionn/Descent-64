@@ -31685,6 +31685,7 @@ MonoBehaviour:
   magicalGirl: {fileID: 756480371}
   normalGirl: {fileID: 13091290}
   player: {fileID: 1223707311}
+  playerLight: {fileID: 1609995113}
   magicalGirlAvatar: {fileID: 9000000, guid: b8d72fd29cef24d578a904c5cdbb9114, type: 3}
   normalGirlAvatar: {fileID: 9000000, guid: 670b08c1e3f231844a4f09667bf9a0b4, type: 3}
 --- !u!43 &1228656656

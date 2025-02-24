@@ -23,6 +23,7 @@ public class modelChanger : MonoBehaviour
 
     void Start(){
         // set the player's animator as normal girl
+        magicalGirl.SetActive(false);
         normalGirl.SetActive(true);
         playerLight.enabled = false;
         player.GetComponent<Animator>().avatar = normalGirlAvatar;
