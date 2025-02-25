@@ -40,7 +40,7 @@ public class pickUpGem : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                dialogueText.SetText("This gemstone...");
+                dialogueText.SetText("This gemstone... I feel a power coming from it.");
                 dialogueCanvas.enabled = true;
 
                 // move to second cutscene
