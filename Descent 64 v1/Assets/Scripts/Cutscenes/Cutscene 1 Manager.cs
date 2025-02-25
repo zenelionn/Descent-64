@@ -40,7 +40,7 @@ public class Cutscene1Manager : MonoBehaviour
     void Start(){
         // initialise dialogue queue]
         talkingTotal = shotTotal +1;
-        cameraList[0].gameObject.SetActive(true);
+        //cameraList[0].gameObject.SetActive(true);
         sentences = new Queue<string>();
         nextButton.onClick.AddListener(OnNextButtonClicked);
         skipButton.onClick.AddListener(SkipCutscene);

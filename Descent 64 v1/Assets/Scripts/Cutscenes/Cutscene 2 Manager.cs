@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Cutscene2Manager : MonoBehaviour
 {
     [Header("Dialogue")]
     [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button skipButton;
     [SerializeField] private float typingSpeed = 0.05f;
@@ -33,13 +35,27 @@ public class Cutscene2Manager : MonoBehaviour
     [Header("Level Loader")]
     [SerializeField] private string levelToLoad;
 
+    [Header("Video Player")]
+    [SerializeField] private Canvas transformCanvas;
+    [SerializeField] private VideoPlayer videoplayer;
+
+    [Header("Light")]
+    [SerializeField] private Light brightLight;
+
+
+
     private int talkingTotal;
     private int shotNumber = 1;
     [SerializeField] private int shotTotal;
 
     void Start(){
+        brightLight.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         // initialise dialogue queue]
         talkingTotal = shotTotal +1;
+        transformCanvas.enabled = false;
+        dialogueCanvas.enabled = true;
         //cameraList[0].gameObject.SetActive(true);
         sentences = new Queue<string>();
 
@@ -92,6 +108,12 @@ public class Cutscene2Manager : MonoBehaviour
             SwitchCameras(shotNumber);
             shotNumber = shotNumber + 1;
             Debug.Log(shotNumber);
+
+            //light
+            if (shotNumber == 4){
+                brightLight.enabled = true;
+            }
+
         }
         else{
             shotNumber = shotTotal;
@@ -102,6 +124,8 @@ public class Cutscene2Manager : MonoBehaviour
     private void EndDialogue(){
         Debug.Log("End of Dialogue");
         nextButton.gameObject.SetActive(false);
+        PlayTransformation();
+        
         StartCoroutine(LoadLevelASync(levelToLoad));
     }
 
@@ -117,10 +141,20 @@ public class Cutscene2Manager : MonoBehaviour
         cameraList[shotNumber].gameObject.SetActive(true);
     }
 
+    private void PlayTransformation(){
+        transformCanvas.enabled = true;
+        dialogueCanvas.enabled = false;
+        videoplayer.Play();
+    }
+
     IEnumerator LoadLevelASync(string levelToLoad){
+        yield return new WaitForSeconds(18);
+        modelChanger.Transformed = true;
+        transformCanvas.enabled = false;
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
         yield return null;
    }
+
 
    
    

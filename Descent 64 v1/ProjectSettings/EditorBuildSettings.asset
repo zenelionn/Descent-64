@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/The Basement.unity
     guid: d67772ce782a065469d599366553e724
+  - enabled: 1
+    path: Assets/Scenes/Basement Second Cutscene.unity
+    guid: 354c94d3831864c4280a5b640a6a4446
   m_configObjects: {}
