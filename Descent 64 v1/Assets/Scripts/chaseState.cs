@@ -13,6 +13,7 @@ public class chaseState : StateMachineBehaviour
     [SerializeField] private float chaseOffDistance;
 
     public static bool jumpscareCheck;
+    public static bool isChasingCheck;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -33,12 +34,14 @@ public class chaseState : StateMachineBehaviour
         float distance = Vector3.Distance(player.position, animator.transform.position);
         if (distance > chaseOffDistance){
             animator.SetBool("isChasing", false);
+            isChasingCheck = false;
         }
         if (distance < 1f){
             
             jumpscareCheck = true;
-                   
-    }
+          
+        }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

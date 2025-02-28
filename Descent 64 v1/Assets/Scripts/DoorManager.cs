@@ -21,7 +21,12 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject EButton;
-  
+
+    [Header("Sound Stuff")]
+    [SerializeField] private AudioSource doorOpenSound;
+    [SerializeField] private AudioSource doorCloseSound;
+    [SerializeField] private AudioSource lockedDoor;
+   
     private void Start(){
         canInteract = false;
         dialogueCanvas.enabled = false;
@@ -57,6 +62,7 @@ public class DoorManager : MonoBehaviour
                 // if it's the washroom, check if it's locked. If not open door
                 if (washroom == true && isLocked == true){
                     dialogueText.SetText("It's locked");
+                    lockedDoor.Play();
                     dialogueCanvas.enabled = true;
 
                 }
@@ -73,6 +79,7 @@ public class DoorManager : MonoBehaviour
         if (doorAnimator != null){
             doorOpen = true;
             doorAnimator.Play("Door Open");
+            doorOpenSound.Play();
 
         }
     }
@@ -81,6 +88,7 @@ public class DoorManager : MonoBehaviour
         if (doorOpen == true){
             doorAnimator.Play("Door Close");
             doorOpen = false;
+            doorCloseSound.Play();
         }
     }
 

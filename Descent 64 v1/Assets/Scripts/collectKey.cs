@@ -22,6 +22,9 @@ public class collectKey : MonoBehaviour
     private bool canInteract;
     [SerializeField] private GameObject key;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
+
+    [Header("Sound Stuff")]
+    [SerializeField] private AudioSource keyNoise;
     
     
     void Start()
@@ -46,6 +49,7 @@ public class collectKey : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
+                keyNoise.Play();
                 dialogueText.SetText("it's a key. I wonder what it leads to?");
                 DoorManager.isLocked = false;
                 dialogueCanvas.enabled = true;

@@ -139,15 +139,19 @@ public class ThirdPersonController : MonoBehaviour
         // Only play footsteps if the player is moving on the ground
         if (cc.isGrounded && (inputHorizontal != 0 || inputVertical != 0))
         {
+            // Adjust footstep interval when sprinting
+            float currentFootstepInterval = isSprinting ? footstepInterval / 1.5f : footstepInterval; // Make footsteps faster when sprinting
+
             footstepTimer += Time.deltaTime;
 
-            if (footstepTimer >= footstepInterval)
+            if (footstepTimer >= currentFootstepInterval)
             {
                 footstepTimer = 0f;
                 PlayFootstepSound();
             }
         }
     }
+
 
     private void PlayFootstepSound()
     {
