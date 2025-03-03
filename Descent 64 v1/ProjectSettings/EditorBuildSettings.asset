@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Basement Second Cutscene.unity
     guid: 354c94d3831864c4280a5b640a6a4446
+  - enabled: 1
+    path: Assets/Scenes/Basement Third Cutscene.unity
+    guid: c4264e3c81b36134b9ecb6262faaa68a
   m_configObjects: {}

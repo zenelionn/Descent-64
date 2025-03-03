@@ -156,6 +156,7 @@ public class Cutscene3Manager : MonoBehaviour
     
 
     IEnumerator LoadLevelASync(string levelToLoad){
+        modelChanger.Transformed = true;
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
         yield return null;
    }
