@@ -42,6 +42,9 @@ public class Cutscene2Manager : MonoBehaviour
     [Header("Light")]
     [SerializeField] private Light brightLight;
 
+    [Header("Sound")]
+    [SerializeField] private AudioSource backgroundMusic;
+
 
 
     private int talkingTotal;
@@ -49,6 +52,9 @@ public class Cutscene2Manager : MonoBehaviour
     [SerializeField] private int shotTotal;
 
     void Start(){
+        // background music
+        backgroundMusic.Play();
+
         brightLight.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -144,6 +150,8 @@ public class Cutscene2Manager : MonoBehaviour
     private void PlayTransformation(){
         transformCanvas.enabled = true;
         dialogueCanvas.enabled = false;
+        // turn background music off
+        backgroundMusic.Stop();
         videoplayer.Play();
     }
 
