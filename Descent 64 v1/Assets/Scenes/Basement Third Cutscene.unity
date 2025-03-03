@@ -3593,42 +3593,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 263135646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe13b197ee0f16e4bb602fd6d98362ca, type: 3}
+  m_Script: {fileID: 11500000, guid: c9c0cd330912dce4e96bf4ad5410b9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 699446839}
-  dialogueCanvas: {fileID: 1994882042}
   nextButton: {fileID: 339121628}
   skipButton: {fileID: 1659187136}
   typingSpeed: 0.05
-  playerAnimator: {fileID: 0}
-  playerAnimations:
-  - Looking Curiously
-  - Looking Curiously
-  - Reach
-  - Kick Back
+  playerAnimator: {fileID: 2440850578212814563}
+  playerAnimations: []
   enemyAnimator: {fileID: 9097766174983056708}
-  enemyAnimations:
-  - Huddled
-  - Huddled
-  - Huddled
-  - Huddled
-  cameraList:
-  - {fileID: 188499491}
-  - {fileID: 16758063}
-  - {fileID: 281139932}
-  - {fileID: 1939238878}
-  positions:
-  - {fileID: 1738373334}
-  - {fileID: 1738373334}
-  - {fileID: 742935618}
-  - {fileID: 742935618}
-  Player: {fileID: 0}
+  enemyAnimations: []
+  cameraList: []
+  positions: []
+  Player: {fileID: 8967890422066314787}
   levelToLoad: The Basement
-  transformCanvas: {fileID: 0}
-  videoplayer: {fileID: 0}
-  brightLight: {fileID: 0}
-  shotTotal: 4
+  shotTotal: 0
 --- !u!1001 &267060518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30216,11 +30196,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835810913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a9850accdee884891f964cfd645765, type: 3}
+  m_Script: {fileID: 11500000, guid: d4093236a9ecfa54f9cab8af7e8996b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 263135648}
-  dialogue: {fileID: 11400000, guid: 4ef56556c8de62142858cc6bf8f153c4, type: 2}
+  dialogue: {fileID: 0}
   startButton: {fileID: 670883081}
 --- !u!1 &1838755992
 GameObject:
