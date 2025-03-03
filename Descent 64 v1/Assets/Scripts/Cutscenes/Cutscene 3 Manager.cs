@@ -13,6 +13,9 @@ public class Cutscene3Manager : MonoBehaviour
     [SerializeField] private Button skipButton;
     [SerializeField] private float typingSpeed = 0.05f;
 
+    private Color white = new Color(255,255,255);
+    private Color pink = new Color(240, 38, 240);
+
     private bool isTyping = false;
     private Queue<string> sentences;
 
@@ -33,6 +36,11 @@ public class Cutscene3Manager : MonoBehaviour
     [Header("Level Loader")]
     [SerializeField] private string levelToLoad;
 
+    [Header("Magic Ball")]
+    [SerializeField] private GameObject magicBall;
+    [SerializeField] private float speed;
+    [SerializeField] private List<GameObject> magicBallPos = new List<GameObject>();
+
     private int talkingTotal;
     private int shotNumber = 1;
     [SerializeField] private int shotTotal;
@@ -45,6 +53,8 @@ public class Cutscene3Manager : MonoBehaviour
         nextButton.onClick.AddListener(OnNextButtonClicked);
         skipButton.onClick.AddListener(SkipCutscene);
         nextButton.gameObject.SetActive(false);
+
+        magicBall.SetActive(false);
     }
 
     public void StartDialogue(Dialogue dialogue){
@@ -83,13 +93,35 @@ public class Cutscene3Manager : MonoBehaviour
     private void OnNextButtonClicked(){
         DisplayNextSentence();
         if (shotNumber != shotTotal){
+            
+            // player
             playerAnimator.Play(playerAnimations[shotNumber]);
             Player.transform.position = positions[shotNumber].transform.position;
             Player.transform.rotation = positions[shotNumber].transform.rotation;
+
+            // enemy
             enemyAnimator.Play(enemyAnimations[shotNumber]);
+
+            // ball
+            magicBall.transform.position = magicBallPos[shotNumber].transform.position;
+            
+
             SwitchCameras(shotNumber);
             shotNumber = shotNumber + 1;
             Debug.Log(shotNumber);
+
+            if (shotNumber == 6){
+                magicBall.SetActive(true);
+                typingSpeed = 0.025f;
+            }
+            if (shotNumber == 7){
+                // change color and speed
+                dialogueText.color = Color.red;
+            }
+            
+
+            
+            
         }
         else{
             shotNumber = shotTotal;
@@ -114,6 +146,10 @@ public class Cutscene3Manager : MonoBehaviour
 
         cameraList[shotNumber].gameObject.SetActive(true);
     }
+
+    
+
+    
 
     IEnumerator LoadLevelASync(string levelToLoad){
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
