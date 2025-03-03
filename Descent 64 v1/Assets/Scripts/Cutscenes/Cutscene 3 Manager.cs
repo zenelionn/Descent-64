@@ -118,6 +118,10 @@ public class Cutscene3Manager : MonoBehaviour
                 // change color and speed
                 dialogueText.color = Color.red;
             }
+            if (shotNumber == 11){
+                magicBall.SetActive(false);
+                dialogueText.color = Color.white;
+            }
             
 
             
