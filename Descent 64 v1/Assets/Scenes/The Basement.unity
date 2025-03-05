@@ -33096,6 +33096,8 @@ MonoBehaviour:
   magicalGirlAvatar: {fileID: 9000000, guid: 04ca0cb04d759438cb71f9a6eb6dadb9, type: 3}
   normalGirlAvatar: {fileID: 9000000, guid: 670b08c1e3f231844a4f09667bf9a0b4, type: 3}
   wholePlayer: {fileID: 786845060}
+  magicalGirlController: {fileID: 22100000, guid: a55db169efc35684b81ae126caca8512,
+    type: 2}
 --- !u!82 &1223707327
 AudioSource:
   m_ObjectHideFlags: 0

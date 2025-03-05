@@ -78,6 +78,10 @@ public class ThirdPersonController : MonoBehaviour
         }
 
         HeadHittingDetect();
+
+        if(Input.GetKeyDown(KeyCode.K)){
+            modelChanger.Transformed = true;
+        }
     }
 
     private void FixedUpdate()
