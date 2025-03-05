@@ -4170,13 +4170,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3310129599138967072, guid: 268bbd229edfdba45a4d45903e472716,
         type: 3}
+      propertyPath: velocity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310129599138967072, guid: 268bbd229edfdba45a4d45903e472716,
+        type: 3}
       propertyPath: footstepSound
       value: 
       objectReference: {fileID: 8300000, guid: 6b6d89c5290c8304ea36894c08c3ef03, type: 3}
     - target: {fileID: 3310129599138967072, guid: 268bbd229edfdba45a4d45903e472716,
         type: 3}
       propertyPath: footstepInterval
-      value: 0.6
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3310129599138967072, guid: 268bbd229edfdba45a4d45903e472716,
         type: 3}
@@ -20762,8 +20767,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.82641506, g: 0.76146704, b: 0.54730505, a: 1}
-  m_Intensity: 65.4
-  m_Range: 10
+  m_Intensity: 20.3
+  m_Range: 3.73
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -38755,6 +38760,16 @@ PrefabInstance:
       propertyPath: clickToMoveCamera
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9030538853541958529, guid: 0090731b51e488b43a6a7307adf4cfef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030538853541958529, guid: 0090731b51e488b43a6a7307adf4cfef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39380,8 +39395,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.82641506, g: 0.76146704, b: 0.54730505, a: 1}
-  m_Intensity: 59.09
-  m_Range: 10
+  m_Intensity: 17.82
+  m_Range: 7.37
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -43686,8 +43701,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.82641506, g: 0.76146704, b: 0.54730505, a: 1}
-  m_Intensity: 31.7
-  m_Range: 10
+  m_Intensity: 15.73
+  m_Range: 5.9
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
