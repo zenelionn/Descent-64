@@ -19,9 +19,10 @@ public class collectKey : MonoBehaviour
     [SerializeField] private GameObject EButton;
 
     [Header("Key Stuff")]
-    private bool canInteract;
+    private bool canInteractWithKey;
     [SerializeField] private GameObject key;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
+    private bool KeyTaken;
 
     [Header("Sound Stuff")]
     [SerializeField] private AudioSource keyNoise;
@@ -30,36 +31,46 @@ public class collectKey : MonoBehaviour
     void Start()
     {
         dialogueCanvas.enabled = false;
-        canInteract = false;
+        canInteractWithKey = false;
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
     }
 
     private void OnTriggerEnter(Collider other){
-        EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
-        canInteract = true;
+        
+        if (KeyTaken){
+            canInteractWithKey = false;
+        }
+        else{
+            canInteractWithKey = true;
+            EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
+        }
+        
+
 
     }
 
     private void OnTriggerExit(Collider other){
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
-        canInteract = false;
+        canInteractWithKey = false;
         dialogueCanvas.enabled = false;
     }
 
     void Update(){
-        if (canInteract && Input.GetKeyDown(interactionKey)){
+        if (canInteractWithKey && Input.GetKeyDown(interactionKey)){
             {
                 keyNoise.Play();
                 dialogueText.SetText("it's a key. I wonder what it leads to?");
                 DoorManager.isLocked = false;
                 dialogueCanvas.enabled = true;
                 key.SetActive(false);
+                KeyTaken = true;
 
             }
         }
 
         if (modelChanger.Transformed == true){
             key.SetActive(false);
+            KeyTaken = true;
         }
     }
 

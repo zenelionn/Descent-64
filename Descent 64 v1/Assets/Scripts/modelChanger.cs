@@ -18,6 +18,10 @@ public class modelChanger : MonoBehaviour
 
     [SerializeField] private GameObject wholePlayer;
 
+    private Animator animator;
+    public AnimatorOverrideController magicalGirlController;
+    
+
     
 
 
@@ -26,10 +30,13 @@ public class modelChanger : MonoBehaviour
 
     void Start(){
         // set the player's animator as normal girl
+        animator = GetComponent<Animator>();
+        
         magicalGirl.SetActive(false);
         normalGirl.SetActive(true);
         playerLight.enabled = false;
         player.GetComponent<Animator>().avatar = normalGirlAvatar;
+        
         if (Transformed == true){
             wholePlayer.transform.position = playerPosAfterTransform.transform.position;
             Debug.Log("Set player");
@@ -40,9 +47,11 @@ public class modelChanger : MonoBehaviour
     void Update(){
         if (Transformed == true){
             // turn off normal girl
+
             normalGirl.SetActive(false);
             // change avatar
             player.GetComponent<Animator>().avatar = magicalGirlAvatar;
+            animator.runtimeAnimatorController = magicalGirlController;
             // turn on magical girl
             magicalGirl.SetActive(true);
             // set position to the washroom
