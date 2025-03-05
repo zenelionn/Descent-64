@@ -4283,10 +4283,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5760493320708922015, guid: 268bbd229edfdba45a4d45903e472716,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1223707313}
-    - targetCorrespondingSourceObject: {fileID: 5760493320708922015, guid: 268bbd229edfdba45a4d45903e472716,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1223707320}
     - targetCorrespondingSourceObject: {fileID: 5760493320708922015, guid: 268bbd229edfdba45a4d45903e472716,
         type: 3}
@@ -4300,6 +4296,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1223707327}
+    - targetCorrespondingSourceObject: {fileID: 5760493320708922015, guid: 268bbd229edfdba45a4d45903e472716,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223707330}
   m_SourcePrefab: {fileID: 100100000, guid: 268bbd229edfdba45a4d45903e472716, type: 3}
 --- !u!1 &253723609 stripped
 GameObject:
@@ -33003,23 +33003,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 251496719}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1223707313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223707311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d17dd5a2156d0448cbb4467252deea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimation: {fileID: 1223707316}
-  magicBall: {fileID: 643809708}
-  player: {fileID: 786845060}
-  enemy: {fileID: 860857224}
-  speed: 5
 --- !u!95 &1223707316 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2593653635507999306, guid: 268bbd229edfdba45a4d45903e472716,
@@ -33195,6 +33178,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1223707330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223707311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d3ed9ab6cee9b47be5fa02b43fc215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimation: {fileID: 1223707316}
+  player: {fileID: 1223707311}
+  magicBall: {fileID: 643809708}
+  LocationOfTheBall: {fileID: 375218315}
+  speed: 5
+  enemy: {fileID: 188339879}
+  AttackButton: {fileID: 1732742180}
 --- !u!43 &1228656656
 Mesh:
   m_ObjectHideFlags: 0

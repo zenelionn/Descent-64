@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
         if ( ! clickToMoveCamera )
         {
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-            UnityEngine.Cursor.visible = false;
+            UnityEngine.Cursor.visible = true;
         }
 
     }
