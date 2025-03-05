@@ -14,10 +14,13 @@ public class pickUpGem : MonoBehaviour
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
     [SerializeField] private GameObject EButton;
 
+    [SerializeField] private GameObject gem;
+
     private bool canInteract;
     // Start is called before the first frame update
     void Start()
     {
+        gem.SetActive(true);
         dialogueCanvas.enabled = false;
         canInteract = false;
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
@@ -42,7 +45,14 @@ public class pickUpGem : MonoBehaviour
                 SceneManager.LoadSceneAsync("Basement Second Cutscene");
                 
             }
-    }}
+
+        }
+
+        if (modelChanger.Transformed == true){
+            gem.SetActive(false);
+        }
+    
+    }
 
 
 

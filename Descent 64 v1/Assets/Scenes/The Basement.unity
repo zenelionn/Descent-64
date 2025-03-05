@@ -1137,6 +1137,7 @@ MonoBehaviour:
   dialogueText: {fileID: 147126457}
   interactionKey: 101
   EButton: {fileID: 1711649920}
+  gem: {fileID: 99784004}
 --- !u!65 &99784007
 BoxCollider:
   m_ObjectHideFlags: 0

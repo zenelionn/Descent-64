@@ -41,8 +41,18 @@ public class vasePickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                dialogueText.SetText("is it pronounced vase or vase?");
+                
+                if (modelChanger.Transformed == true){
+                    dialogueText.SetText("This is one of the last vases after Dad broke them all.");
+                }
+                else{
+                    dialogueText.SetText("is it pronounced vase or vase?");
+                    
+                }
                 dialogueCanvas.enabled = true;
+            
+                
+                
 
             }
     }}

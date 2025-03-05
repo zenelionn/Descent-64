@@ -56,6 +56,11 @@ public class collectKey : MonoBehaviour
                 key.SetActive(false);
 
             }
-    }}
+        }
+
+        if (modelChanger.Transformed == true){
+            key.SetActive(false);
+        }
+    }
 
 }

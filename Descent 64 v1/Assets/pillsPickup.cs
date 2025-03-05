@@ -38,7 +38,13 @@ public class pillsPickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                dialogueText.SetText("I don't like taking those. They're bitter.");
+                if (modelChanger.Transformed == true){
+                    dialogueText.SetText("These can serve a new purpose");
+                }
+                else{
+                    dialogueText.SetText("I don't like taking those. They're bitter.");
+                    
+                }
                 dialogueCanvas.enabled = true;
 
             }

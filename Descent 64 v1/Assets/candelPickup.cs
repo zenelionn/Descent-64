@@ -38,7 +38,13 @@ public class candelPickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                dialogueText.SetText("We don't light this candle. Not anymore");
+                if (modelChanger.Transformed == true){
+                    dialogueText.SetText("Blunt force trauma... ironic isn't it?");
+                }
+                else{
+                    dialogueText.SetText("We don't light this candle. Not anymore");
+                    
+                }
                 dialogueCanvas.enabled = true;
 
             }

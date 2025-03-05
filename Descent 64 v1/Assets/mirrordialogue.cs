@@ -41,7 +41,13 @@ public class mirrordialogue : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                dialogueText.SetText("I don't like my reflection");
+                if (modelChanger.Transformed == true){
+                    dialogueText.SetText("I look... incredible!");
+                }
+                else{
+                    dialogueText.SetText("I don't like my reflection");
+                    
+                }
                 dialogueCanvas.enabled = true;
 
             }
