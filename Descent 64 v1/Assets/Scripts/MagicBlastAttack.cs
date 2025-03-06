@@ -24,9 +24,19 @@ public class MagicBlastAttack : MonoBehaviour
 
     [Header("Canvas Stuff")]
     [SerializeField] private GameObject AttackButton;
+    [SerializeField] private GameObject AmmoParent;
+    [SerializeField] private GameObject AmmoBtn1;
+    [SerializeField] private GameObject AmmoBtn2;
+    [SerializeField] private GameObject AmmoBtn3;
     
 
     void Start(){
+        // ammo UI
+        AmmoParent.SetActive(false);
+        AmmoBtn1.GetComponent<Image>().color = new Color32(103,103,103,255);
+        AmmoBtn2.GetComponent<Image>().color = new Color32(103,103,103,255);
+        AmmoBtn2.GetComponent<Image>().color = new Color32(103,103,103,255);
+
         magicBall.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         AttackButton.GetComponent<Image>().color = new Color32(70,70,70,255);
@@ -36,6 +46,9 @@ public class MagicBlastAttack : MonoBehaviour
     }
 
     void Update(){
+        if (modelChanger.Transformed == true){
+            AmmoParent.SetActive(true);
+        }
         finalDestination = enemy.transform.position;
         // button
         if (ammoAmount > 0){
@@ -44,6 +57,19 @@ public class MagicBlastAttack : MonoBehaviour
         }
         if (ammoAmount == 0){
             AttackButton.GetComponent<Image>().color = new Color32(70,70,70,255);
+            AmmoBtn1.GetComponent<Image>().color = new Color32(103,103,103,255);
+        }
+        if (ammoAmount == 1){
+            AmmoBtn1.GetComponent<Image>().color = new Color32(255,255,255,255);
+            AmmoBtn2.GetComponent<Image>().color = new Color32(103,103,103,255);
+            AmmoBtn3.GetComponent<Image>().color = new Color32(103,103,103,255);
+        }
+        if (ammoAmount == 2){
+            AmmoBtn2.GetComponent<Image>().color = new Color32(255,255,255,255);
+            AmmoBtn3.GetComponent<Image>().color = new Color32(103,103,103,255);
+        }
+        if (ammoAmount == 3){
+            AmmoBtn3.GetComponent<Image>().color = new Color32(255,255,255,255);
         }
         if (modelChanger.Transformed == true && Input.GetMouseButtonDown(1) && chaseState.isChasingCheck == false && ammoAmount > 0){
             StartCoroutine(endAttack());
@@ -68,7 +94,7 @@ public class MagicBlastAttack : MonoBehaviour
             }
         }
 
-        Debug.Log(enemyHealth.health);
+       
 
     }
 
