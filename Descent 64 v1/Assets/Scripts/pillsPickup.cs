@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class candelPickup : MonoBehaviour
+public class pillsPickup : MonoBehaviour
 {
    [Header("Canvas Stuff")]
     [SerializeField] private Canvas dialogueCanvas;
@@ -13,7 +13,7 @@ public class candelPickup : MonoBehaviour
 
     [Header("Candle Stuff")]
     private bool canInteract;
-    [SerializeField] private GameObject candleStick;
+    [SerializeField] private GameObject pillbottles;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
 
     void Start()
@@ -39,10 +39,11 @@ public class candelPickup : MonoBehaviour
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
                 if (modelChanger.Transformed == true){
-                    dialogueText.SetText("Blunt force trauma... ironic isn't it?");
+                    dialogueText.SetText("These can serve a new purpose");
+                    MagicBlastAttack.ammoAmount = MagicBlastAttack.ammoAmount + 1;
                 }
                 else{
-                    dialogueText.SetText("We don't light this candle. Not anymore");
+                    dialogueText.SetText("I don't like taking those. They're bitter.");
                     
                 }
                 dialogueCanvas.enabled = true;
@@ -50,6 +51,4 @@ public class candelPickup : MonoBehaviour
             }
         }
     }
-
 }
-

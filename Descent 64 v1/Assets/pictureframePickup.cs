@@ -4,20 +4,17 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class vasePickup : MonoBehaviour
+public class pictureframePickup : MonoBehaviour
 {
     [Header("Canvas Stuff")]
     [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject EButton;
 
-    [Header("Vase Stuff")]
+    [Header("Picture Stuff")]
     private bool canInteract;
-    [SerializeField] private GameObject vase;
+    [SerializeField] private GameObject pictureFrame;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
-
-
-    // no sound yet but maybe a sound when picked up?
 
     void Start()
     {
@@ -41,19 +38,17 @@ public class vasePickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                
                 if (modelChanger.Transformed == true){
-                    dialogueText.SetText("This is one of the last vases after Dad broke them all.");
+                    dialogueText.SetText("A memory of a happier day... yeah right");
+                    MagicBlastAttack.ammoAmount = MagicBlastAttack.ammoAmount + 1;
                 }
                 else{
-                    dialogueText.SetText("is it pronounced vase or vase?");
+                    dialogueText.SetText("The family portrait!");
                     
                 }
                 dialogueCanvas.enabled = true;
-            
-                
-                
 
             }
-    }}
+        }
+    }
 }

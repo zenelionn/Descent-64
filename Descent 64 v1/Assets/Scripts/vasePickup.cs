@@ -4,17 +4,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class pillsPickup : MonoBehaviour
+public class vasePickup : MonoBehaviour
 {
-   [Header("Canvas Stuff")]
+    [Header("Canvas Stuff")]
     [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject EButton;
 
-    [Header("Candle Stuff")]
+    [Header("Vase Stuff")]
     private bool canInteract;
-    [SerializeField] private GameObject pillbottles;
+    [SerializeField] private GameObject vase;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
+
+
+    // no sound yet but maybe a sound when picked up?
 
     void Start()
     {
@@ -38,16 +41,21 @@ public class pillsPickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
+                
                 if (modelChanger.Transformed == true){
-                    dialogueText.SetText("These can serve a new purpose");
+                    dialogueText.SetText("This is one of the last vases after Dad broke them all.");
+                    MagicBlastAttack.ammoAmount = MagicBlastAttack.ammoAmount + 1;
                 }
                 else{
-                    dialogueText.SetText("I don't like taking those. They're bitter.");
+                    dialogueText.SetText("is it pronounced vase or vase?");
                     
                 }
                 dialogueCanvas.enabled = true;
+                Debug.Log(MagicBlastAttack.ammoAmount);
+            
+                
+                
 
             }
-        }
-    }
+    }}
 }
