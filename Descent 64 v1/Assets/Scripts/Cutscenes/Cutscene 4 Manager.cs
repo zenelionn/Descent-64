@@ -53,6 +53,9 @@ public class Cutscene4Manager : MonoBehaviour
     public static bool DavidDead = false;
 
     void Start(){
+        // unlock cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         talkingTotal = shotTotal +1;
 
         // initialising positions for everyone
