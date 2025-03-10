@@ -130,6 +130,7 @@ public class Cutscene4Manager : MonoBehaviour
 
             if (shotNumber == 6){
                 blackScreen.SetActive(true);
+                chokeText.enabled = true;
                 choking1.Play();
             }
             if (shotNumber == 7){
