@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Basement Fourth Cutscene.unity
     guid: 2feff8eb28eb48d4d8977964841cab36
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 48ecf2de2b9b05743ad2649cfec9a883
   m_configObjects: {}
