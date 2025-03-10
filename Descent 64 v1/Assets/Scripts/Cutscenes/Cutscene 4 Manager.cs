@@ -7,14 +7,23 @@ using UnityEngine.SceneManagement;
 
 public class Cutscene4Manager : MonoBehaviour
 {
-    [Header("Dialogue")]
+    [Header("Dialogue UI")]
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button skipButton;
     [SerializeField] private float typingSpeed = 0.05f;
 
+    [SerializeField] private GameObject blackScreen;
+    [SerializeField] private TMP_Text chokeText;
+
+
     private bool isTyping = false;
     private Queue<string> sentences;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource choking1;
+    [SerializeField] private AudioSource choking2;
+    [SerializeField] private AudioSource choking3;
 
     [Header("Animations")]
     [SerializeField] private Animator playerAnimator;
@@ -37,6 +46,7 @@ public class Cutscene4Manager : MonoBehaviour
 
     private int talkingTotal;
     private int shotNumber = 1;
+    private int i = 0;
     [SerializeField] private int shotTotal;
 
     void Start(){
@@ -64,7 +74,10 @@ public class Cutscene4Manager : MonoBehaviour
         playerAnimator.Play("Wary Idle");
         enemyAnimator.Play("death animation");
         deathFire.SetActive(true);
+
         
+        blackScreen.SetActive(false);
+        chokeText.enabled = false;
     }
 
     public void StartDialogue(Dialogue dialogue){
@@ -112,7 +125,16 @@ public class Cutscene4Manager : MonoBehaviour
             // enemy
             enemyAnimator.Play(enemyAnimations[shotNumber]);
 
-            
+            if (shotNumber == 6){
+                blackScreen.SetActive(true);
+                choking1.Play();
+            }
+            if (shotNumber == 7){
+                choking2.Play();
+            }
+            if (shotNumber == 8){
+                choking3.Play();
+            }
 
             SwitchCameras(shotNumber);
             shotNumber = shotNumber + 1;
@@ -128,7 +150,10 @@ public class Cutscene4Manager : MonoBehaviour
     private void EndDialogue(){
         Debug.Log("End of Dialogue");
         nextButton.gameObject.SetActive(false);
-        StartCoroutine(LoadLevelASync(levelToLoad));
+        //StartCoroutine(LoadLevelASync(levelToLoad));
+
+        
+
     }
 
     private void SkipCutscene(){
@@ -149,4 +174,7 @@ public class Cutscene4Manager : MonoBehaviour
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
         yield return null;
    }
+
+    
+   
 }
