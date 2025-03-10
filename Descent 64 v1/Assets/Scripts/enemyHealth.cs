@@ -42,6 +42,7 @@ public class enemyHealth : MonoBehaviour
         if (health < 1){
             enemyAnimator.SetBool("isDying", true);
             deathFire.SetActive(true);
+            chaseState.isChasingCheck = false;
             enemyDeathPos = enemy.transform.position;
             playerCutscene4Pos = playerCutscenePos.transform.position;
             cameraCutscene4Pos = cameraCutscenePos.transform.position;

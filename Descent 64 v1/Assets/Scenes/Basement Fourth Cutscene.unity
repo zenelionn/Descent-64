@@ -3744,9 +3744,9 @@ MonoBehaviour:
   - Wary Idle
   - Wary Idle
   - Wary Idle
-  - Wary Idle
-  - Wary Idle
-  - Wary Idle
+  - Bending Down
+  - Bending Down
+  - Bending Down
   enemyAnimator: {fileID: 9097766174983056708}
   enemyAnimations:
   - death animation

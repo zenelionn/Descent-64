@@ -18,6 +18,7 @@ public class Cutscene4Manager : MonoBehaviour
 
 
     private bool isTyping = false;
+    
     private Queue<string> sentences;
 
     [Header("Audio")]
@@ -48,6 +49,8 @@ public class Cutscene4Manager : MonoBehaviour
     private int shotNumber = 1;
     private int i = 0;
     [SerializeField] private int shotTotal;
+
+    public static bool DavidDead = false;
 
     void Start(){
         talkingTotal = shotTotal +1;
@@ -150,7 +153,7 @@ public class Cutscene4Manager : MonoBehaviour
     private void EndDialogue(){
         Debug.Log("End of Dialogue");
         nextButton.gameObject.SetActive(false);
-        //StartCoroutine(LoadLevelASync(levelToLoad));
+        StartCoroutine(LoadLevelASync(levelToLoad));
 
         
 
@@ -171,6 +174,7 @@ public class Cutscene4Manager : MonoBehaviour
 
     IEnumerator LoadLevelASync(string levelToLoad){
         modelChanger.Transformed = true;
+        DavidDead = true;
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
         yield return null;
    }
