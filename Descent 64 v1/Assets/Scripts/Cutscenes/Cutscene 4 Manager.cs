@@ -40,18 +40,28 @@ public class Cutscene4Manager : MonoBehaviour
     [SerializeField] private int shotTotal;
 
     void Start(){
-        // initialise dialogue queue]
         talkingTotal = shotTotal +1;
-        cameraList[0].transform.position = enemyHealth.cameraCutscene4Pos;
-        cameraList[0].transform.rotation = enemyHealth.cameraCutscene4Rotation;
+
+        // initialising positions for everyone
+        currentCamera = cameraList[0];
+        cameraList[0].transform.position = enemyHealth.cameraCutscene4Pos + new Vector3(0,1,0);
+        currentCamera.transform.LookAt(enemyHealth.playerCutscene4Pos);
+        //cameraList[0].transform.rotation = enemyHealth.cameraCutscene4Rotation;
         cameraList[0].gameObject.SetActive(true);
+
+
         sentences = new Queue<string>();
         nextButton.onClick.AddListener(OnNextButtonClicked);
         skipButton.onClick.AddListener(SkipCutscene);
         nextButton.gameObject.SetActive(false);
         
+        // initialising positions for enemy and player
         Enemy.transform.position = enemyHealth.enemyDeathPos;
         Player.transform.position = enemyHealth.playerCutscene4Pos;
+        Player.transform.LookAt(enemyHealth.playerCutscene4Pos);
+
+        //initialising player and enemy animations 
+        playerAnimator.Play("Wary Idle");
         enemyAnimator.Play("death animation");
         deathFire.SetActive(true);
         

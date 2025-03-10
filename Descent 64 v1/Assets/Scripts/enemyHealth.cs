@@ -12,7 +12,7 @@ public class enemyHealth : MonoBehaviour
     public static Vector3 enemyDeathPos;
     public static Vector3 playerCutscene4Pos;
     public static Vector3 cameraCutscene4Pos;
-    public static Quaternion cameraCutscene4Rotation;
+    //public static Quaternion cameraCutscene4Rotation;
 
     [SerializeField] private GameObject enemy;
     [SerializeField] private Animator enemyAnimator;
@@ -45,7 +45,7 @@ public class enemyHealth : MonoBehaviour
             enemyDeathPos = enemy.transform.position;
             playerCutscene4Pos = playerCutscenePos.transform.position;
             cameraCutscene4Pos = cameraCutscenePos.transform.position;
-            cameraCutscene4Rotation = cameraCutscenePos.transform.rotation;
+            //cameraCutscene4Rotation = cameraCutscenePos.transform.rotation;
             StartCoroutine(killEnemy());        }
     }
 
@@ -59,7 +59,7 @@ public class enemyHealth : MonoBehaviour
     }
 
     IEnumerator LoadLevelASync(string levelToLoad){
-        modelChanger.Transformed = true;
+        //modelChanger.Transformed = true;
         AsyncOperation loadOperation = SceneManager.LoadSceneAsync(levelToLoad);
         yield return null;
    }
