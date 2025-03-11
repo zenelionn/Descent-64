@@ -50,6 +50,9 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {
+        if (modelChanger.Transformed == true){
+            velocity = 6f;
+        }
         // Input checkers
         inputHorizontal = Input.GetAxis("Horizontal");
         inputVertical = Input.GetAxis("Vertical");

@@ -55,6 +55,9 @@ public class modelChanger : MonoBehaviour
             // turn on magical girl
             magicalGirl.SetActive(true);
             // set position to the washroom
+
+            // changing her speed
+            
             
             playerLight.enabled = true;
         }

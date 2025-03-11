@@ -33525,7 +33525,7 @@ MonoBehaviour:
   player: {fileID: 1223707311}
   magicBall: {fileID: 643809708}
   LocationOfTheBall: {fileID: 375218315}
-  speed: 5
+  speed: 10
   enemy: {fileID: 188339879}
   AttackButton: {fileID: 1732742180}
   AmmoParent: {fileID: 1914135926}
