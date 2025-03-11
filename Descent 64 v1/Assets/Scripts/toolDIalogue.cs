@@ -15,6 +15,7 @@ public class toolDIalogue : MonoBehaviour
     private bool canInteract;
     [SerializeField] private GameObject tooltable;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
+    [SerializeField] private GameObject player; 
 
     void Start()
     {
@@ -24,15 +25,19 @@ public class toolDIalogue : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
-        canInteract = true;
+        if (other.gameObject == player) {
+            EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
+            canInteract = true;
+        }
 
     }
 
     private void OnTriggerExit(Collider other){
-        EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
-        canInteract = false;
-        dialogueCanvas.enabled = false;
+        if (other.gameObject == player) {
+            EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
+            canInteract = false;
+            dialogueCanvas.enabled = false;
+        }
     }
 
     void Update(){

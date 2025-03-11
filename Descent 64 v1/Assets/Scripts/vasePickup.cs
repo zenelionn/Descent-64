@@ -13,6 +13,7 @@ public class vasePickup : MonoBehaviour
 
     [Header("Vase Stuff")]
     private bool canInteract;
+    private bool ammoTaken;
     [SerializeField] private GameObject vase;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
 
@@ -23,6 +24,7 @@ public class vasePickup : MonoBehaviour
     {
         dialogueCanvas.enabled = false;
         canInteract = false;
+        ammoTaken = false;
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
     }
 
@@ -41,17 +43,21 @@ public class vasePickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                
-                if (modelChanger.Transformed == true){
+                if (ammoTaken != true){
+                    if (modelChanger.Transformed == true){
                     dialogueText.SetText("This is one of the last vases after Dad broke them all.");
                     MagicBlastAttack.ammoAmount = MagicBlastAttack.ammoAmount + 1;
-                }
-                else{
+                    ammoTaken = true;
+                
+                    }
+                    else{
                     dialogueText.SetText("is it pronounced vase or vase?");
                     
+                    }
+                    dialogueCanvas.enabled = true;
+                    //Debug.Log(MagicBlastAttack.ammoAmount);
                 }
-                dialogueCanvas.enabled = true;
-                Debug.Log(MagicBlastAttack.ammoAmount);
+                
             
                 
                 

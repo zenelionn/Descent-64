@@ -13,6 +13,7 @@ public class pillsPickup : MonoBehaviour
 
     [Header("Candle Stuff")]
     private bool canInteract;
+    private bool ammoTaken;
     [SerializeField] private GameObject pillbottles;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
 
@@ -20,6 +21,7 @@ public class pillsPickup : MonoBehaviour
     {
         dialogueCanvas.enabled = false;
         canInteract = false;
+        ammoTaken = false;
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
     }
 
@@ -38,15 +40,19 @@ public class pillsPickup : MonoBehaviour
     void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
             {
-                if (modelChanger.Transformed == true){
-                    dialogueText.SetText("These can serve a new purpose");
-                    MagicBlastAttack.ammoAmount = MagicBlastAttack.ammoAmount + 1;
-                }
-                else{
-                    dialogueText.SetText("I don't like taking those. They're bitter.");
+                if(ammoTaken != true){
+                    if (modelChanger.Transformed == true){
+                        dialogueText.SetText("These can serve a new purpose");
+                        MagicBlastAttack.ammoAmount = MagicBlastAttack.ammoAmount + 1;
+                        ammoTaken = true;
+                    }
+                    else{
+                        dialogueText.SetText("I don't like taking those. They're bitter.");
                     
+                    }
+                    dialogueCanvas.enabled = true;
                 }
-                dialogueCanvas.enabled = true;
+                
 
             }
         }

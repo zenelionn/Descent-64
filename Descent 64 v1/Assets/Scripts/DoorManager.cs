@@ -13,10 +13,10 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private bool washroom;
     private bool canInteract;
     private bool doorOpen;
-    private Collider playerCollider;
+    [SerializeField] private GameObject player; 
 
     public static bool isLocked = true;
- 
+
     [Header("Canvas Stuff")]
     [SerializeField] private Canvas dialogueCanvas;
     [SerializeField] private TMP_Text dialogueText;
@@ -26,51 +26,41 @@ public class DoorManager : MonoBehaviour
     [SerializeField] private AudioSource doorOpenSound;
     [SerializeField] private AudioSource doorCloseSound;
     [SerializeField] private AudioSource lockedDoor;
-   
+
     private void Start(){
         canInteract = false;
         dialogueCanvas.enabled = false;
         EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
-
-        //doorAnimator.SetBool("isOpen", false);
     }
 
     private void OnTriggerEnter(Collider other){
-        if (other.GetComponent<Collider>() != null){
-                playerCollider = other;
-                EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
-                canInteract = true;
-                doorOpen = false;
-            
+        
+        if (other.gameObject == player) {
+            EButton.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            canInteract = true;
+            doorOpen = false;
         }
     }
 
     private void OnTriggerExit(Collider other){
-        if(other == playerCollider){
+        
+        if (other.gameObject == player) {
             canInteract = false;
             CloseDoor();
             dialogueCanvas.enabled = false;
-            EButton.GetComponent<Image>().color = new Color32(70,70,70,255);
-            
+            EButton.GetComponent<Image>().color = new Color32(70, 70, 70, 255);
         }
-        
     }
 
     private void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
-            {
-                // if it's the washroom, check if it's locked. If not open door
-                if (washroom == true && isLocked == true){
-                    dialogueText.SetText("It's locked");
-                    lockedDoor.Play();
-                    dialogueCanvas.enabled = true;
-
-                }
-                
-                else{
-                    OpenDoor();
-                }
-                
+            if (washroom == true && isLocked == true){
+                dialogueText.SetText("It's locked");
+                lockedDoor.Play();
+                dialogueCanvas.enabled = true;
+            }
+            else{
+                OpenDoor();
             }
         }
     }
@@ -80,7 +70,6 @@ public class DoorManager : MonoBehaviour
             doorOpen = true;
             doorAnimator.Play("Door Open");
             doorOpenSound.Play();
-
         }
     }
 
@@ -91,7 +80,4 @@ public class DoorManager : MonoBehaviour
             doorCloseSound.Play();
         }
     }
-
-    
-    
 }

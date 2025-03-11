@@ -47,7 +47,7 @@ public class Cutscene4Manager : MonoBehaviour
 
     private int talkingTotal;
     private int shotNumber = 1;
-    private int i = 0;
+    
     [SerializeField] private int shotTotal;
 
     public static bool DavidDead = false;
@@ -74,7 +74,7 @@ public class Cutscene4Manager : MonoBehaviour
         // initialising positions for enemy and player
         Enemy.transform.position = enemyHealth.enemyDeathPos;
         Player.transform.position = enemyHealth.playerCutscene4Pos;
-        Player.transform.LookAt(enemyHealth.playerCutscene4Pos);
+        Player.transform.LookAt(Enemy.transform.position);
 
         //initialising player and enemy animations 
         playerAnimator.Play("Wary Idle");
