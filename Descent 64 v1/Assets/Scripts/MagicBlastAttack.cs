@@ -49,7 +49,10 @@ public class MagicBlastAttack : MonoBehaviour
         if (modelChanger.Transformed == true){
             AmmoParent.SetActive(true);
         }
-        finalDestination = enemy.transform.position;
+        if (enemy != null){
+            finalDestination = enemy.transform.position;
+        }
+        
         // button
         if (ammoAmount > 0){
             AttackButton.GetComponent<Image>().color = new Color32(255,255,255,255);
