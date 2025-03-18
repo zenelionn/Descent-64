@@ -43993,6 +43993,7 @@ GameObject:
   - component: {fileID: 1764118875}
   - component: {fileID: 1764118876}
   - component: {fileID: 1764118877}
+  - component: {fileID: 1764118878}
   m_Layer: 0
   m_Name: Censor
   m_TagString: Untagged
@@ -44029,8 +44030,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d90cf2e375f7b6489d6e5f48d224df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueCanvas: {fileID: 1254106087}
+  dialogueText: {fileID: 147126457}
+  EButton: {fileID: 1711649920}
+  interactionKey: 101
   enemy: {fileID: 188339879}
-  enemyAnimator: {fileID: 0}
+  enemyAnimator: {fileID: 919132148655842897}
   censorBar: {fileID: 1764118874}
   playerCam: {fileID: 1464704682}
 --- !u!65 &1764118877
@@ -44049,6 +44054,27 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.5533585}
+  m_Center: {x: 0, y: 0, z: 0.045816604}
+--- !u!65 &1764118878
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764118874}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -50222,6 +50248,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &919132148655842897 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6507559444405341372, guid: 2245cc2f7ddcce248ab63ca3071a4967,
+    type: 3}
+  m_PrefabInstance: {fileID: 8574885884092697162}
+  m_PrefabAsset: {fileID: 0}
 --- !u!33 &961982257562938413
 MeshFilter:
   m_ObjectHideFlags: 0
