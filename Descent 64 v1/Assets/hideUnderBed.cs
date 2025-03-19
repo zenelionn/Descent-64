@@ -28,8 +28,11 @@ public class hideUnderBed : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
-        EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
-        canInteract = true;
+        if (Cutscene4Manager.DavidDead == true){
+            EButton.GetComponent<Image>().color = new Color32(255,255,255,255);
+            canInteract = true;
+        }
+        
 
     }
 
