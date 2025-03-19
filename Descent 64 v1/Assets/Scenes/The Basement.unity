@@ -14472,6 +14472,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1871968759}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf62884247828cc4b92a2741defd6416,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871968761}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf62884247828cc4b92a2741defd6416,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1871968760}
   m_SourcePrefab: {fileID: 100100000, guid: cf62884247828cc4b92a2741defd6416, type: 3}
 --- !u!1001 &627857489
 PrefabInstance:
@@ -46082,6 +46090,45 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.165493, y: 3.1343007, z: 7.8760576}
+  m_Center: {x: 0.025228972, y: 1.0671486, z: 1.9241093}
+--- !u!114 &1871968760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871968757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126ad3800cd95c849bbdaf11c1350fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueCanvas: {fileID: 1254106087}
+  dialogueText: {fileID: 147126457}
+  EButton: {fileID: 1711649920}
+  interactionKey: 101
+  hideKey: 104
+  levelToLoad: Basement Cutscene
+--- !u!65 &1871968761
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871968757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
