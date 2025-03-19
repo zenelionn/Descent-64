@@ -10,21 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a9a8a1d2636fb848a332609e77a523e, type: 3}
-  m_Name: Cutscene 4
+  m_Name: Cutscene 5
   m_EditorClassIdentifier: 
   sentences:
-  - He's... he's not dying...
-  - He's just burning.
-  - I don't have anymore magic... but he's suffering.
-  - He's still my brother.
-  - I'm sorry David. Just. Just-
-  - Just close your eyes.
-  - Shh...
-  - It'll be over soon
-  - 
-  - What... What have I done?
-  - // banging sfx
+  - What... what have I done?
+  - // banging noise, Angel looks shocked
   - WHAT'S ALL THAT NOISE!?
-  - No no no no-
-  - He can't see this-
+  - No no no no no-
+  - '// angel turns to the body
+
+    He can''t see this-'
   - I need to hide
