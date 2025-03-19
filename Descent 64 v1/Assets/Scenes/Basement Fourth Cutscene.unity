@@ -3746,12 +3746,12 @@ MonoBehaviour:
   - Bending Down
   - Bending Down
   - Bending Down
-  - Bending Down
-  - Bending Down
-  - Bending Down
-  - Bending Down
-  - Bending Down
-  - Bending Down
+  - Head Shake
+  - Raise Head
+  - Rocking
+  - Rocking
+  - Rocking
+  - Rocking
   enemyAnimator: {fileID: 9097766174983056708}
   enemyAnimations:
   - death animation
@@ -3780,7 +3780,7 @@ MonoBehaviour:
   - {fileID: 188499491}
   - {fileID: 188499491}
   - {fileID: 1814042951}
-  - {fileID: 16758063}
+  - {fileID: 1814042951}
   - {fileID: 281139932}
   - {fileID: 1814042951}
   - {fileID: 1814042951}
@@ -31588,7 +31588,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
