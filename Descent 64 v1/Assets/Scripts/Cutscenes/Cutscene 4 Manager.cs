@@ -24,6 +24,7 @@ public class Cutscene4Manager : MonoBehaviour
     [SerializeField] private AudioSource choking1;
     [SerializeField] private AudioSource choking2;
     [SerializeField] private AudioSource choking3;
+    [SerializeField] private AudioSource banging;
 
     [Header("Animations")]
     [SerializeField] private Animator playerAnimator;
@@ -149,12 +150,19 @@ public class Cutscene4Manager : MonoBehaviour
             }
 
             if (shotNumber == 9){
+                choking1.Stop();
+                choking2.Stop();
+                choking3.Stop();
                 blackScreen.SetActive(false);
                 Enemy.SetActive(false);
                 // switch player's material
                 magicalGirlMaterial.SetTexture("_BaseMap",messyTexture);
                 currentCamera.transform.LookAt(Player.transform.position);
                 
+            }
+
+            if (shotNumber == 10){
+                banging.Play();
             }
 
             SwitchCameras(shotNumber);
