@@ -20,7 +20,7 @@ public class enemyHealth : MonoBehaviour
     [SerializeField] private GameObject playerCutscenePos;
     [SerializeField] private GameObject cameraCutscenePos;
 
-    
+    private static Vector3 initialPosition;
 
     [Header("Level Loader")]
     [SerializeField] private string levelToLoad;
@@ -29,6 +29,14 @@ public class enemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialPosition = enemy.transform.position;
+
+        if (deathscreenButtons.Level1 == true)
+        {
+            enemy.transform.position = initialPosition;
+        }
+
+
         health = 3;   
         enemyAnimator.SetBool("isDying", false); 
         deathFire.SetActive(false);
@@ -38,6 +46,7 @@ public class enemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         deathFire.transform.position = enemy.transform.position;
         if (health < 1){
             enemyAnimator.SetBool("isDying", true);

@@ -54,7 +54,7 @@ public class DoorManager : MonoBehaviour
 
     private void Update(){
         if (canInteract && Input.GetKeyDown(interactionKey)){
-            if (washroom == true && isLocked == true){
+            if (washroom == true && isLocked == true && modelChanger.Transformed == false){
                 dialogueText.SetText("It's locked");
                 lockedDoor.Play();
                 dialogueCanvas.enabled = true;
