@@ -13,7 +13,7 @@ public class pillsPickup : MonoBehaviour
 
     [Header("Candle Stuff")]
     private bool canInteract;
-    private bool ammoTaken;
+    public static bool ammoTaken;
     [SerializeField] private GameObject pillbottles;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
 

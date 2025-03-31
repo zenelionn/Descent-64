@@ -17,11 +17,21 @@ public class deathscreenButtons : MonoBehaviour
         Level1 = true;
         chaseState.jumpscareCheck = false;
         chaseState.isChasingCheck = false;
+        resetAmmo();
         SceneManager.LoadScene("The Basement");
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    private void resetAmmo()
+    {
+        // take in all ammo variables and set them to false
+        candelPickup.ammoTaken = false;
+        pillsPickup.ammoTaken = false;
+        vasePickup.ammoTaken = false;
+
     }
 }

@@ -14,7 +14,7 @@ public class candelPickup : MonoBehaviour
 
     [Header("Candle Stuff")]
     private bool canInteract;
-    private bool ammoTaken;
+    public static bool ammoTaken;
     [SerializeField] private GameObject candleStick;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
 

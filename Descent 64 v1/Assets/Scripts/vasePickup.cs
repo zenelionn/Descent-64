@@ -13,7 +13,7 @@ public class vasePickup : MonoBehaviour
 
     [Header("Vase Stuff")]
     private bool canInteract;
-    private bool ammoTaken;
+    public static bool ammoTaken;
     [SerializeField] private GameObject vase;
     [SerializeField] private KeyCode interactionKey = KeyCode.E;
 
